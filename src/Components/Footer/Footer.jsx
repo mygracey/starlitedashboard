@@ -4,7 +4,7 @@ function Footer(){
     return(
         <section className="footer">
              
-                    &copy; 2026 Starlite International School.
+                    <p>&copy; 2026 Starlite International School.</p>
                 
         </section>
     )

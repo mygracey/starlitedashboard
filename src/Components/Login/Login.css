@@ -97,4 +97,7 @@
         width:100%;
         text-align: center;
     }
+    .login-container h3{
+        text-align:center;
+    }
 }

@@ -1,13 +1,19 @@
 
 import logo from "../../assets/starlitelogo-removebg.png"
 import { FaGraduationCap,FaTachometerAlt,FaSignOutAlt,FaArrowCircleRight,FaUserAlt,FaBookOpen,FaCalendar,FaFileArchive,FaStickyNote,FaEnvelope,FaLaptop,FaCircle,FaVolumeUp,FaArrowRight, FaTrophy,FaUser, FaArrowAltCircleRight,FaBars,FaTimes } from "react-icons/fa"
-import {Link} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom"
+import { useState,useEffect } from "react";
+import { signOut,onAuthStateChanged } from "firebase/auth";
+import {auth,db} from "../FirebaseConfig.js"
 import smilingemoji from "../../assets/smiling-emoji-removebg.png"
 import "./Dashboard.css"
 
 
 function Dashboard(){
 
+const[studentUser,setStudentUser]=useState("")
+
+const navigate=useNavigate()
 
 function openMenu(){
     const openmenu=document.querySelector(".open")
@@ -28,6 +34,27 @@ function closeMenu(){
     openmenu.style.display="block"
     closemenu.style.display="none"
 }
+
+
+function handleSignOut(){
+    signOut(auth)
+    navigate("/")
+   
+}
+
+useEffect(()=>{
+    const unsubscribed=onAuthStateChanged(auth,(currentUser)=>{
+        if(currentUser){
+            setStudentUser(currentUser)
+        }
+        else{
+            navigate("/")
+        }
+    })
+
+    return ()=>unsubscribed()
+})
+
 
     return(
         <section className="dashboard-container">
@@ -61,8 +88,8 @@ function closeMenu(){
                     <li><Link to="#" className="link">Online Class</Link>
                         <FaLaptop className="sidebar-icon"/>
                     </li>
-                    <li><Link to="#" className="link">Logout</Link>
-                        <FaSignOutAlt className="sidebar-icon"/>
+                    <li><Link to="/" className="link">Logout</Link>
+                        <FaSignOutAlt className="sidebar-icon" onClick={handleSignOut}/>
                     </li>
                 </ul>
 
@@ -79,7 +106,7 @@ function closeMenu(){
                    
                     <FaUserAlt className="header-icon icon2 icon"/>
 
-                    <FaSignOutAlt className="header-icon icon3 icon"/>
+                    <FaSignOutAlt className="header-icon icon3 icon" onClick={handleSignOut}/>
                 </div>
 
                 <FaBars className="open" onClick={openMenu}/>
@@ -89,7 +116,7 @@ function closeMenu(){
             <div className="banner container">
                 <div className="card-left">
                     <div className="text-box">
-                        <h2>Welcome back, <span className="caleb">Caleb!</span></h2>
+                        <h2>Welcome back, <span className="caleb">{studentUser.email}</span></h2>
                         <p>Ready to learn something great today? <img src={smilingemoji} width="50"/></p>
                     </div>
                         <FaGraduationCap className="banner-icon"/>
@@ -103,7 +130,7 @@ function closeMenu(){
                    
                         <div className="desc">
                             
-                                 <h3>Caleb Okafor</h3>
+                                 <h3>{studentUser.email}</h3>
                                <div className="ss2">SS2</div> 
                        </div>  
                                       

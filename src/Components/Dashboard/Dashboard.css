@@ -213,16 +213,13 @@
 
 .banner .card-right .desc{
     position:relative;
-    left:-2rem;
+    
     text-align: center;
     margin-top:0.5rem;
+    text-align: center;
 }
 
-.banner-icon-right{
-    font-size:4rem;
-    color:navy;
-}
-.card-right .ss2{
+.card-right .desc .ss2{
     width:100px;
     height:30px;
     background:skyblue;
@@ -230,7 +227,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left:1rem;
+    margin-left:2rem;
+    
+}
+
+.banner-icon-right{
+    font-size:4rem;
+    color:navy;
 }
 
 .banner-user-icon-box{

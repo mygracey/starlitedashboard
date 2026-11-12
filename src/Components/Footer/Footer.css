@@ -11,10 +11,12 @@
     color:rgb(1, 1, 51);
 }
 
+
 /* Mobile Responsiveness*/
 
 @media(max-width:600px){
-   .footer{
-        margin-left:1.5rem;
+   .footer p{
+        margin-left:-1rem;
    }
+   
 }

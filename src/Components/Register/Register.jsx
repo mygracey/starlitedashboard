@@ -25,14 +25,18 @@ function Register(){
     const[cpassword,setCpassword]=useState("")
     const[message,setMessage]=useState("")
 
-    
+    const emailRegex=/[a-zA-Z0-9]+@[a-z]+\.[a-z]+/
 
     function handleRegister(e){
         e.preventDefault()
         if(fullName=="" || age=="" || classLevel=="" || email=="" || address=="" || guardian=="" || relationship=="" || password=="" || cpassword==""){
             setMessage("Please fill in all fields!")
         }
-        else{
+        else if(!emailRegex.test(email)){
+            setMessage("in Valid email input")
+
+        }
+        else if(password.length >= 6 || password.length <=12 && password.length==cpassword.length){
             createUserWithEmailAndPassword(auth,email,password).then((currentUser)=>{
                 console.log(currentUser.user)
                 let user=currentUser.user.uid
@@ -50,7 +54,7 @@ function Register(){
                     relationship:relationship,
                     createdAt:Date.now()
                 }).then(()=>{
-                    setMessage("Hi! " + fullName + " Your account has been successfully created!");
+                    setMessage("Hi! " + fullName + " Sign up successul!");
                     setTimeout(()=>{
                         navigate("/login")
                     },3000)
@@ -59,8 +63,14 @@ function Register(){
                     console.log(error)
                 })
             })
+        } 
+        else{
+            setMessage("Sorry, sign up process failed. Try again.")
+        }  
+            
         }
-    }
+
+        
 
     return(
         <section className="register-container container">
