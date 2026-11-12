@@ -1,0 +1,56 @@
+.errorpage{
+    width:100vw;
+    height:100vh;
+    background:whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.errorpage button{
+    padding:0.8rem 2rem;
+    background:rgb(1, 1, 51);
+    color:gold;
+    border:0;
+    outline:0;
+    cursor:pointer;
+    font-size:1rem;
+    margin-top:1rem;
+}
+
+
+
+@media(max-width:1024px){
+    .errorpage{
+        max-width:1024px;
+    }
+    .errorpage h2{
+        /* font-size:1.3rem; */
+    }
+    .errorpage p{
+        width:auto;
+        text-align: center;
+        max-width:600px;
+    }
+}
+
+
+@media(max-width:600px){
+    .errorpage{
+        max-width:600px;
+        padding:1rem;
+    }
+    .errorpage h2{
+        /* font-size:1.3rem; */
+        text-align: center;
+        line-height: 1.2;
+        width:auto;
+        margin-bottom:0.5rem;
+    }
+    .errorpage p{
+        width:auto;
+        text-align: center;
+        max-width:600px;
+    }
+}

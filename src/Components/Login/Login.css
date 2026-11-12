@@ -1,0 +1,100 @@
+.login-container{
+    width:100vw;
+    min-height:100vh;
+    background:whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top:4rem;
+    
+}
+
+.login-container form{
+    width:400px;
+    height:fit-content;
+    padding:2rem;
+    background:transparent;
+    /* background:rgb(1, 1, 51); */
+    margin-bottom:1rem;
+}
+.login-container p{
+    font-size:1rem;
+    margin-top:0.5rem;
+}
+
+.login-container form input{
+  width:100%;
+  height:2.5rem;
+  border:2px solid rgb(1, 1, 51);
+  margin-top:0.5rem;
+  border-radius: 1rem;
+  font-size:1rem;
+  text-align:center;
+  color:rgb(1, 1, 51);
+} 
+
+.login-container form button{
+    width:100%;
+    height:2.5rem;
+    background:rgb(1, 1, 51);
+    color:gold;
+    font-size:1rem;
+    margin-top:0.5rem;
+    cursor:pointer;
+    border:none;
+    transition: 0.5rem ease-in-out;
+    border-radius: 1rem;
+}
+
+.login-container form button:hover{
+    background:gold;
+    color:rgb(1, 1, 51);
+    font-size:1.1rem;
+   
+}
+
+.login-container form .account-statement{
+    color:rgb(1, 1, 51);
+    display: flex;
+    justify-self: center;
+    gap:0.5rem;
+    margin-top:0.5rem;
+}
+
+.login-container form .link-account{
+    transition:0.3s ease;
+    
+}
+.login-container form .link-account:hover{
+    
+    color:green;
+    font-weight: bold;
+    
+}
+
+
+
+/*Tablet responsiveness*/
+
+@media(max-width:800px){
+    .login-container{
+        max-width:800px;
+    }
+    .login-container p{
+        width:100%;
+        text-align: center;
+    }
+}
+
+/*Mobile responsiveness*/
+
+@media(max-width:600px){
+    .login-container{
+        max-width:600px;
+    }
+    .login-container p{
+        width:100%;
+        text-align: center;
+    }
+}
