@@ -214,7 +214,7 @@ The following sections are reserved for application screenshots.
 Adding actual screenshots helps developers and recruiters understand the interface without having to navigate the application themselves.
 
 ### Student Authentication
-![Sign Up Page](images/starlitedashboard.onrender.com.desktop.version.png)
+![Sign Up Page](starlitedashboard.onrender.com.desktop.version.png)
 ### Student Dashboard
 
 [Insert main dashboard screenshot]
