@@ -215,9 +215,11 @@ Adding actual screenshots helps developers and recruiters understand the interfa
 
 ### Student Authentication
 ![Sign Up Page](starlitedashboard.onrender.com.desktop.version.png)
+![Sign In Page](starlitedashboard.onrender.com.login.desktop.version.png)
+
 ### Student Dashboard
 
-[Insert main dashboard screenshot]
+![Student Dashboard](starlitedashboard.onrender.com_dashboard.desktop.version.png)
 
 ## 10. Engineering Considerations
 
