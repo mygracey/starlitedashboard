@@ -215,7 +215,7 @@ Adding actual screenshots helps developers and recruiters understand the interfa
 
 ### Student Authentication
 
-[Insert login and registration screenshots]
+![image]()
 
 ### Student Dashboard
 
