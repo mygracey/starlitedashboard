@@ -215,7 +215,7 @@ Adding actual screenshots helps developers and recruiters understand the interfa
 
 ### Student Authentication
 
-![image]()
+![image]('starlitedashboard.onrender.com.desktop.version.png')
 
 ### Student Dashboard
 
